@@ -14,5 +14,6 @@ bcrypt = Bcrypt(app)
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+migrate = Migrate(app, db)
 
 from app.user import view
