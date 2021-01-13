@@ -29,7 +29,7 @@ def register():
                   token=token)
 
         return 'Check Your Email and Activate Your Account'
-    return render_template('user/register.html', form=form)
+    return render_template('register.html', form=form)
 
 @app.route('/user_confirm/<token>')
 def user_confirm(token):
