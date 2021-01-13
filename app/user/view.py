@@ -4,7 +4,6 @@ from flask import render_template
 from app.user.models import User
 from app.user.form import FormRegister
 
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = FormRegister()
@@ -17,5 +16,13 @@ def register():
         )
         db.session.add(user)
         db.session.commit()
-        return 'Success Thank You'
+        
+        send_mail(sender='Sender@domain.com',
+                  recipients=['recipients@domain.com'],
+                  subject='Activate your account',
+                  template='author/mail/welcome',
+                  mailtype='html',
+                  user=user)
+
+        return 'Check Your Email and Activate Your Account'
     return render_template('user/register.html', form=form)
