@@ -10,3 +10,9 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URL')
     SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    
+    MAIL_SERVER = environ.get('MAIL_SERVER')
+    MAIL_PROT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = environ.get('MAIL_PASSWORD')
